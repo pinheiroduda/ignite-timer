@@ -117,8 +117,6 @@ export function Home() {
     setActiveCycleId(null)
   }
 
-  console.log(cycles)
-
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
 
   const minutesAmount = Math.floor(currentSeconds / 60)
