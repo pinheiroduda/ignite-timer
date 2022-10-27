@@ -108,6 +108,7 @@ export function Home() {
             id="task"
             list="task-suggestions"
             placeholder="Dê um nome para o seu projeto"
+            disabled={!!activeCycle}
             {...register('task')}
           />
 
@@ -126,6 +127,7 @@ export function Home() {
             step="5"
             min="0"
             max="60"
+            disabled={!!activeCycle}
             {...register('minutesAmount', { valueAsNumber: true })}
           />
 
@@ -143,7 +145,7 @@ export function Home() {
         {activeCycle ? (
           <StopCountDownButton type="button">
             <HandPalm size={24} />
-            Pausar
+            Interromper
           </StopCountDownButton>
         ) : (
           <StartCountDownButton disabled={isSubmitDisabled} type="submit">
