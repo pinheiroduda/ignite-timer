@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Play } from 'phosphor-react'
+import { HandPalm, Play } from 'phosphor-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 import { differenceInSeconds } from 'date-fns'
@@ -11,6 +11,7 @@ import {
   HomeContainer,
   MinutesAmountInput,
   Separator,
+  StopCountDownButton,
   StartCountDownButton,
   TaskInput,
 } from './styles'
@@ -139,10 +140,17 @@ export function Home() {
           <span>{seconds[1]}</span>
         </CountDownContainer>
 
-        <StartCountDownButton disabled={isSubmitDisabled} type="submit">
-          <Play size={24} />
-          Começar
-        </StartCountDownButton>
+        {activeCycle ? (
+          <StopCountDownButton type="button">
+            <HandPalm size={24} />
+            Pausar
+          </StopCountDownButton>
+        ) : (
+          <StartCountDownButton disabled={isSubmitDisabled} type="submit">
+            <Play size={24} />
+            Começar
+          </StartCountDownButton>
+        )}
       </form>
     </HomeContainer>
   )
