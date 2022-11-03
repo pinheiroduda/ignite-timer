@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { HandPalm, Play } from 'phosphor-react'
 import { FormProvider, useForm } from 'react-hook-form'
 import * as zod from 'zod'
@@ -10,7 +11,6 @@ import {
 } from './styles'
 import { CountDown } from './components/CountDown'
 import { NewCycleForm } from './components/NewCycleForm'
-import { useContext } from 'react'
 import { CyclesContext } from '../../context/CyclesContext'
 
 const newCycleFormValidationSchema = zod.object({
